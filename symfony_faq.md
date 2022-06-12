@@ -30,3 +30,15 @@ $em->getConnection()->connect();
 $connected = $em->getConnection()->isConnected();
 var_dump($connected); exit;
 ```
+
+5. How to get variable value (which was passed from controller) in TWIG ?
+
+```
+{% if product.stock > 10 %}
+   Available
+{% elseif product.stock > 0 %}
+   Only {{ product.stock }} left!
+{% else %}
+   Sold-out!
+{% endif %}
+```

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Application status{% endblock %}
+
+{% block body %}
+    <table>
+        <tr>
+            <th>Configuration name</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Db connection</td>
+            <td>{% if is_db_connected %}Connected!{% else %}No connection{% endif %}</td>
+        </tr>
+       
+    </table>
+{% endblock %}
