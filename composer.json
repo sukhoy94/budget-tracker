@@ -17,6 +17,7 @@
         "symfony/framework-bundle": "*",
         "symfony/proxy-manager-bridge": "5.4.*",
         "symfony/runtime": "*",
+        "symfony/webpack-encore-bundle": "^1.14",
         "symfony/yaml": "*"
     },
     "require-dev": {
