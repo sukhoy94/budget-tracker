@@ -1,6 +1,6 @@
 # Budget tracker
 
-Available documentation for FOSElasticaBundle
+Available documentation for application
 ---------------------------------------------
 
 * [Setup](doc/setup.md)
