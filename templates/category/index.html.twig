@@ -2,9 +2,9 @@
 
 {% block title %}Categories{% endblock %}
 
-{% block body %}   
-    <div class="container mx-auto">        
-        <table class="table table-auto">
+{% block body %}
+        <h3>Dostępne kategorie</h3>
+        <table class="table table-auto mt-3">
             <thead>
             <tr>
                 <th>ID</th>
@@ -20,12 +20,13 @@
                     <td>
                         
                         <a 
-                                class=""
+                                class="btn btn-primary"
                                 href="{{ path('app_category_show', {'id': category.id}) }}"
                         >
                             Pokaż
                         </a>
-                        <a 
+                        <a
+                                class="btn btn-info"
                                 href="{{ path('app_category_edit', {'id': category.id}) }}"
                         >
                             Edycja
@@ -41,10 +42,9 @@
         </table>
 
         <a 
-            class="text-2xl bg-blue-50 text-center"
+            class="btn btn-warning"
             href="{{ path('app_category_new') }}"
         >
-            Create new
+            Dodaj
         </a>
-    </div>
 {% endblock %}
