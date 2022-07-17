@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kategoria {{ category.title }}{% endblock %}
+
+{% block body %}
+    <h1>{{ category.title|capitalize}}</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ category.id }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{ category.title }}</td>
+        </tr>
+        <tr>
+            <th>Slug</th>
+            <td>{{ category.slug }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="mb-5">
+        <a class="btn btn-info" href="{{ path('app_category_index') }}">Wrócić do listy</a>
+        <a class="btn btn-success" href="{{ path('app_category_edit', {'id': category.id}) }}">Edytuj</a>
+    </div>
+    {{ include('category/_delete_form.html.twig') }}
+{% endblock %}
