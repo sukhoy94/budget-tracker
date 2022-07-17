@@ -1,37 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}Categories{% endblock %}
 
-{% block body %}
-    <h1>Category index</h1>
+{% block body %}   
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold underline">Available categories</h1>
 
-    <table class="table">
-        <thead>
+        <table class="table table-auto">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Title</th>
                 <th>Slug</th>
                 <th>actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for category in categories %}
-            <tr>
-                <td>{{ category.id }}</td>
-                <td>{{ category.title }}</td>
-                <td>{{ category.slug }}</td>
-                <td>
-                    <a href="{{ path('app_category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('app_category_edit', {'id': category.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for category in categories %}
+                <tr>
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.title }}</td>
+                    <td>{{ category.slug }}</td>
+                    <td>
+                        <a href="{{ path('app_category_show', {'id': category.id}) }}">show</a>
+                        <a href="{{ path('app_category_edit', {'id': category.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('app_category_new') }}">Create new</a>
+        <button class="rounded-full border-black">Save Changes</button>
+        <a 
+            class="text-2xl bg-blue-50 text-center"
+            href="{{ path('app_category_new') }}"
+        >
+            Create new
+        </a>
+    </div>
 {% endblock %}
